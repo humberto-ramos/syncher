@@ -1,0 +1,4 @@
+<launch>
+		<node name="syncher" pkg="syncher" type="syncher" output="screen"/>
+
+</launch>
