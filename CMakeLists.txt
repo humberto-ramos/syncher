@@ -12,11 +12,25 @@ find_package(catkin REQUIRED COMPONENTS
         cv_bridge
         image_transport
         message_generation
+
 )
 
 
 
 find_package( OpenCV REQUIRED )
+
+add_message_files(
+        FILES
+        SyncImages.msg
+)
+
+generate_messages(
+        DEPENDENCIES
+        geometry_msgs
+        sensor_msgs
+        std_msgs
+)
+
 
 catkin_package(CATKIN_DEPENDS)
 

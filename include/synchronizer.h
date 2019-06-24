@@ -15,6 +15,7 @@
 #include <message_filters/sync_policies/approximate_time.h>
 #include <sensor_msgs/Image.h>
 #include <iostream>
+#include "syncher/SyncImages.h"
 using namespace sensor_msgs;
 using namespace message_filters;
 
@@ -42,6 +43,8 @@ namespace syncher
         boson_sub boson_subs;
         typedef sync_policies::ApproximateTime<Image, Image,Image> MySyncPolicy;
         message_filters::Synchronizer<MySyncPolicy> sync;
+
+        ros::Publisher frames_publisher_;
 
     };
 
